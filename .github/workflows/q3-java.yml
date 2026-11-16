@@ -28,5 +28,17 @@ jobs:
     runs-on: ubuntu-latest
     if: success()
     steps:
-      - name: Create tag
-        run: git tag "build-${{ github.run_id }}"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar git
+        run: |
+          git config user.name "Giliardo Júlio"
+          git config user.email "giliardo.junior.702@ufrn.edu.br"
+
+      - name: Criar e enviar a Tag
+        run: |
+          TAG="build-${{ github.run_id }}"
+          git tag -a "$TAG" -m "Tag criada"
+          git push origin "$TAG"
+        
