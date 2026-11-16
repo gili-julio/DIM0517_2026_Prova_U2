@@ -27,7 +27,7 @@ jobs:
         run: mvn test
 
       - name: Construir imagem Docker
-        run: docker build . teste:v1
+        run: docker build . -t teste:v1
 
       - name: Rodar imagem Docker
         run: docker up teste
