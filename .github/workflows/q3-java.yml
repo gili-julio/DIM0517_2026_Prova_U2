@@ -1,5 +1,9 @@
-name: Java
+name: Java Q3
 
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
 
 jobs:
   build:
@@ -20,4 +24,9 @@ jobs:
 
       - name: Build
         run: mvn -B compile
-
+  create_tag:
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Create tag
+        run: git tag "build-${{ github.run_id }}"
