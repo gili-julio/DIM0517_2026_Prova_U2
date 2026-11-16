@@ -1,4 +1,7 @@
-name: Java
+name: Java Q4
+
+on:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -19,3 +22,12 @@ jobs:
 
       - name: Build
         run: mvn -B compile
+
+      - name: Tests
+        run: mvn test
+
+      - name: Construir imagem Docker
+        run: docker build . teste:v1
+
+      - name: Rodar imagem Docker
+        run: docker up teste
