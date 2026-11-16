@@ -30,4 +30,4 @@ jobs:
         run: docker build . -t teste:v1
 
       - name: Rodar imagem Docker
-        run: docker up teste
+        run: docker run teste
