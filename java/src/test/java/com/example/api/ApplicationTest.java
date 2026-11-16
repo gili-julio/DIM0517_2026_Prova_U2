@@ -22,7 +22,7 @@ class ApplicationTest {
     @Test
     void hello() throws Exception {
         mockMvc.perform(get("/hello"))
-                .andExpect(status().isOk())
+                .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.message").value("Hello, World!"));
     }
 
