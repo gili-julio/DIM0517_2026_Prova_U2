@@ -5,10 +5,10 @@ on:
     branches: 
       - "feature/*"
     paths:
-      - "java/src/*"
+      - "java/src/**"
       - "Dockerfile"
       - "Docker-compose"
-      - "java/target/*"
+      - "java/target/**"
 
 jobs:
   build:
