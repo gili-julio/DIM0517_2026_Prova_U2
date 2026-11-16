@@ -1,4 +1,4 @@
-name: Java
+name: Java Q2
 
 on:
   pull_request:
