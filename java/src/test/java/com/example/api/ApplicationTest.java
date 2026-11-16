@@ -24,6 +24,7 @@ class ApplicationTest {
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.message").value("Hello, World!"));
+                
     }
 
     @Test
